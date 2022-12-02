@@ -28,8 +28,8 @@ class Vehicles extends Controller
     }
 
     /**
-     * ACTION: addSong
-     * This method handles what happens when you move to http://yourproject/songs/addsong
+     * ACTION: addVehicles
+     * This method handles what happens when you move to http://yourproject/vehicles/addVehicles
      * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "add a song" form on songs/index
      * directs the user after the form submit. This method handles all the POST data from the form and then redirects
      * the user back to songs/index via the last line: header(...)
@@ -37,10 +37,19 @@ class Vehicles extends Controller
      */
     public function addVehicles()
     {
-        // if we have POST data to create a new song entry
+        // if we have POST data to create a new vehicle entry.
         if (isset($_POST["submit_add_vechile"])) {
-            // do addSong() in model/model.php
-            $this->model->addVehicles($_POST["name"], $_POST["model"],  $_POST["link"]);
+
+            // do addVehicles() in model/model.php
+            $this->model->addVehicles(
+
+                $_POST["vec_name"], 
+                $_POST["model"],  
+                $_POST["price"], 
+                $_POST["mfd_date"], 
+                $_POST["color_id"], 
+                $_POST["branch_id"]
+            );
         }
 
         // where to go after song has been added
@@ -48,8 +57,8 @@ class Vehicles extends Controller
     }
 
     /**
-     * ACTION: deleteSong
-     * This method handles what happens when you move to http://yourproject/songs/deletesong
+     * ACTION: deleteVehicle
+     * This method handles what happens when you move to http://yourproject/vehicles/deleteVehicle
      * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "delete a song" button on songs/index
      * directs the user after the click. This method handles all the data from the GET request (in the URL!) and then
      * redirects the user back to songs/index via the last line: header(...)

@@ -1,17 +1,21 @@
 <div class="container">
     <h2>You are in the View: application/view/vehicles/index.php (everything in this box comes from that file)</h2>
-    <!-- add song form -->
+    <!-- Add vechile form -->
     <div class="box">
         <h3>Add a Vechile</h3>
         <form action="<?php echo URL; ?>vehicles/addVehicles" method="POST">
             <label>Name</label>
-            <input type="text" name="name" value="" required />
+            <input type="text" name="vec_name" value="" placeholder="Fortuner" required />
             <label>Model</label>
-            <input type="text" name="model" value="" required />
+            <input type="text" name="model" value="" placeholder="HW310" required />
             <label>Price</label>
-            <input type="text" name="price" value="" />
+            <input type="text" name="price" value="" placeholder="470000" required />
             <label>MFD Date</label>
-            <input type="text" name="mfd_date" value="" />
+            <input type="date" name="mfd_date" value="" required />
+            <label>Color ID</label>
+            <input type="text" name="color_id" value="" placeholder="1" required />
+            <label>Branch ID</label>
+            <input type="text" name="branch_id" value="" placeholder="2" required />
             <input type="submit" name="submit_add_vechile" value="Submit" />
         </form>
     </div>

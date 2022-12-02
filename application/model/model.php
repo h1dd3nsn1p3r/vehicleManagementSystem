@@ -38,21 +38,48 @@ class Model
     }
 
     /**
-     * Add a song to database
-     * TODO put this explanation into readme and remove it from here
-     * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
-     * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
-     * to save HTML and JS to the database, which is a valid use case). Data will only be cleaned when putting it out
+     * Add a Vehicle to the database.
+     * To save HTML and JS to the database, which is a valid use case). Data will only be cleaned when putting it out
      * in the views (see the views for more info).
-     * @param string $artist Artist
-     * @param string $track Track
-     * @param string $link Link
+     * @param string $vec_name
+     * @param string $price
+     * @param string $model
+     * @param string $mfd_date
+     * @param string $color_id
+     * @param string $branch_id
      */
-    public function addVehicles($artist, $track, $link)
+    public function addVehicles($vec_name, $price, $model, $mfd_date, $color_id, $branch_id)
     {
-        $sql = "INSERT INTO song (artist, track, link) VALUES (:artist, :track, :link)";
+        $sql = "INSERT INTO 
+            vechile_details 
+            (
+                vec_name, 
+                vec_price, 
+                vec_model, 
+                vec_mfd_date, 
+                vec_color_id, 
+                vec_branch_id
+            ) VALUES (
+                :vec_name, 
+                :price, 
+                :model, 
+                :mfd_date, 
+                :color_id, 
+                :branch_id
+            )";
+
         $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link);
+
+        $parameters = array(
+
+            ':vec_name'     => $vec_name,
+            ':price'        => $price,
+            ':model'        => $model,
+            ':mfd_date'     => $mfd_date,
+            ':color_id'     => $color_id,
+            ':branch_id'    => $branch_id
+            
+        );
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
