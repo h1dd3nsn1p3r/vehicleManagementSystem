@@ -124,7 +124,7 @@ class Vehicles extends Controller
 
     /**
      * AJAX-ACTION: ajaxGetStats
-     * TODO documentation
+     * @since 1.0.0
      */
     public function ajaxGetStats()
     {
