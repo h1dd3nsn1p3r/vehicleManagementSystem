@@ -6,10 +6,10 @@
         <form action="<?php echo URL; ?>vehicles/addVehicles" method="POST">
             <label>Name</label>
             <input type="text" name="vec_name" value="" placeholder="Fortuner" required />
-            <label>Model</label>
-            <input type="text" name="model" value="" placeholder="HW310" required />
             <label>Price</label>
             <input type="text" name="price" value="" placeholder="470000" required />
+             <label>Model</label>
+            <input type="text" name="model" value="" placeholder="HW310" required />
             <label>MFD Date</label>
             <input type="date" name="mfd_date" value="" required />
             <label>Color ID</label>

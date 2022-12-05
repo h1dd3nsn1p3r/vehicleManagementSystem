@@ -1,23 +1,19 @@
 <?php
 
 /**
+ *
  * Class Vehicles
- * This is a demo class.
- *
- * Please note:
- * Don't use the same name for class and method, as this might trigger an (unintended) __construct of the class.
- * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
- *
+ * This is a vehicles controller to demonstrate the basic CRUD (Create/Read/Update/Delete) actions.
  */
 class Vehicles extends Controller
 {
     /**
      * PAGE: index
-     * This method handles what happens when you move to http://yourproject/songs/index
+     * This method handles what happens when you move to http://yourproject/vehicles/index
      */
     public function index()
     {
-        // getting all songs and amount of songs
+        // Getting all vehicles and amount of vehicles
         $vehicles = $this->model->getAllVehicles();
         $amount_of_vehicles = $this->model->getAmountOfVehicles();
 
@@ -44,8 +40,8 @@ class Vehicles extends Controller
             $this->model->addVehicles(
 
                 $_POST["vec_name"], 
-                $_POST["model"],  
                 $_POST["price"], 
+                $_POST["model"],  
                 $_POST["mfd_date"], 
                 $_POST["color_id"], 
                 $_POST["branch_id"]
@@ -77,11 +73,11 @@ class Vehicles extends Controller
         header('location: ' . URL . 'vehicles/index');
     }
 
-     /**
-     * ACTION: editSong
-     * This method handles what happens when you move to http://yourproject/songs/editsong
-     * @param int $song_id Id of the to-edit song
-     */
+    /**
+    * ACTION: editSong
+    * This method handles what happens when you move to http://yourproject/songs/editsong
+    * @param int $song_id Id of the to-edit song
+    */
     public function editSong($song_id)
     {
         // if we have an id of a song that should be edited
