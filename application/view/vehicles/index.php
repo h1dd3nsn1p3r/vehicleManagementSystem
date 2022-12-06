@@ -67,7 +67,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="<?php echo URL . 'vehicles/editvehicle/' . htmlspecialchars($vehicle->vec_id, ENT_QUOTES, 'UTF-8'); ?>">Edit</a>
+                        <a href="<?php echo URL . 'vehicles/editVehicle/' . htmlspecialchars($vehicle->vec_id, ENT_QUOTES, 'UTF-8'); ?>">Edit</a>
                     </td>
                 </tr>
             <?php } ?>

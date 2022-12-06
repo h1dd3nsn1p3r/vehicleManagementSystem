@@ -106,13 +106,22 @@ class Model
     }
 
     /**
-     * Get a song from database
+     * Get a vehicles from database.
      */
-    public function getSong($song_id)
+    public function getVehicle($vec_id)
     {
-        $sql = "SELECT id, artist, track, link FROM song WHERE id = :song_id LIMIT 1";
+        $sql = "SELECT 
+                vec_id, 
+                vec_name, 
+                vec_price, 
+                vec_model, 
+                vec_mfd_date, 
+                vec_color_id, 
+                vec_branch_id 
+                FROM vechile_details WHERE vec_id = :vec_id LIMIT 1";
+                
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
+        $parameters = array(':vec_id' => $vec_id);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
@@ -124,22 +133,43 @@ class Model
     }
 
     /**
-     * Update a song in database
-     * // TODO put this explaination into readme and remove it from here
+     * Update a vehicle in database
      * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
      * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
      * to save HTML and JS to the database, which is a valid use case). Data will only be cleaned when putting it out
      * in the views (see the views for more info).
-     * @param string $artist Artist
-     * @param string $track Track
-     * @param string $link Link
-     * @param int $song_id Id
+     * @param string $vehicle_name
+     * @param string $price
+     * @param string $model
+     * @param int $mfd_date
+     * @param int $color_id
+     * @param int $branch_id
      */
-    public function updateSong($artist, $track, $link, $song_id)
+    public function updateVehicle($vehicle_name, $price, $model, $mfd_date, $color_id, $branch_id, $vec_id)
     {
-        $sql = "UPDATE song SET artist = :artist, track = :track, link = :link WHERE id = :song_id";
+        $sql = "UPDATE vechile_details SET
+                vec_name        = :vehicle_name, 
+                vec_price       = :price, 
+                vec_model       = :model, 
+                vec_mfd_date    = :mfd_date, 
+                vec_color_id    = :color_id, 
+                vec_branch_id   = :branch_id  
+                WHERE 
+                vec_id          = :vec_id";
+
         $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link, ':song_id' => $song_id);
+
+        //UPDATE `vechile_details` SET `vec_price` = '90000', `vec_model` = 'FOST89', `vec_mfd_date` = '12/02/2021', `vec_color_id` = '1', `vec_branch_id` = '1' WHERE `vechile_details`.`vec_id` = 3;
+
+        $parameters = array(
+            ':vehicle_name'       => $vehicle_name, 
+            ':price'              => $price, 
+            ':model'              => $model, 
+            ':mfd_date'           => $mfd_date,
+            ':color_id'           => $color_id,
+            ':branch_id'          => $branch_id,
+            ':vec_id'             => $vec_id
+            );
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();

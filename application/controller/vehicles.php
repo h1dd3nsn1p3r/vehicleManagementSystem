@@ -74,44 +74,53 @@ class Vehicles extends Controller
     }
 
     /**
-    * ACTION: editSong
-    * This method handles what happens when you move to http://yourproject/songs/editsong
-    * @param int $song_id Id of the to-edit song
+    * ACTION: editVehicle
+    * This method handles what happens when you move to http://yourproject/vechicles/editVehicle
+    * @param int $vec_id Id of the to-edit song
     */
-    public function editSong($song_id)
+    public function editVehicle($vec_id)
     {
         // if we have an id of a song that should be edited
-        if (isset($song_id)) {
-            // do getSong() in model/model.php
-            $song = $this->model->getSong($song_id);
+        if (isset($vec_id)) {
+            // do getVehicle() in model/model.php
+            $vehicle = $this->model->getVehicle($vec_id);
 
             // in a real application we would also check if this db entry exists and therefore show the result or
             // redirect the user to an error page or similar
 
             // load views. within the views we can echo out $song easily
             require APP . 'view/_templates/header.php';
-            require APP . 'view/songs/edit.php';
+            require APP . 'view/vehicles/edit.php';
             require APP . 'view/_templates/footer.php';
         } else {
-            // redirect user to songs index page (as we don't have a song_id)
+            // redirect user to vehicles index page (as we don't have a song_id)
             header('location: ' . URL . 'vehicles/index');
         }
     }
     
     /**
-     * ACTION: updateSong
-     * This method handles what happens when you move to http://yourproject/songs/updatesong
-     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "update a song" form on songs/edit
+     * ACTION: updateVehicle
+     * This method handles what happens when you move to http://yourproject/vehicles/updatevehicle
+     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "update a vehicle" form on vehicles/edit
      * directs the user after the form submit. This method handles all the POST data from the form and then redirects
-     * the user back to songs/index via the last line: header(...)
+     * the user back to vehicles/index via the last line: header(...)
      * This is an example of how to handle a POST request.
      */
-    public function updateSong()
+    public function updateVehicle()
     {
-        // if we have POST data to create a new song entry
-        if (isset($_POST["submit_update_song"])) {
-            // do updateSong() from model/model.php
-            $this->model->updateSong($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['song_id']);
+
+        // if we have POST data to vehicle detail entry.
+        if (isset($_POST["submit_update_vehicle"])) {
+            // do updateVehicle() from model/model.php
+            $this->model->updateVehicle(
+                $_POST["vehicle_name"], 
+                $_POST["price"],  
+                $_POST["model"], 
+                $_POST['mfd_date'],
+                $_POST['color_id'],
+                $_POST['branch_id'],
+                $_POST["vec_id"], // We need ID to update data in model.
+            );
         }
 
         // where to go after song has been added
