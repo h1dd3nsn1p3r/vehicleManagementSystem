@@ -1,9 +1,8 @@
 <div class="container">
-    <h2>You are in the View: application/view/vehicles/edit.php (everything in this box comes from that file)</h2>
-    <!-- add song form -->
-    <div>
+    <!-- update vehicle form -->
+    <div class="inner">
         <h3>Edit: </h3>
-        <form action="<?php echo URL; ?>vehicles/updateVehicle" method="POST">
+        <form class="update-vehicle" action="<?php echo URL; ?>vehicles/updateVehicle" method="POST">
             <label>Name</label>
             <input type="text" name="vehicle_name" value="<?php echo htmlspecialchars($vehicle->vec_name, ENT_QUOTES, 'UTF-8'); ?>" />
 
@@ -26,6 +25,6 @@
 
             <input type="submit" name="submit_update_vehicle" value="Update" />
         </form>
-    </div>
-</div>
+    </div><!-- /inner -->
+</div><!-- /container -->
 
