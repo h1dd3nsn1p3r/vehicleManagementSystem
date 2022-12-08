@@ -90,7 +90,7 @@
                             <?php if (isset($vehicle->vec_model)) echo htmlspecialchars($vehicle->vec_model, ENT_QUOTES, 'UTF-8'); ?>
                         </td>
                         <td>
-                            <?php if (isset($vehicle->vec_price)) echo htmlspecialchars($vehicle->vec_price, ENT_QUOTES, 'UTF-8'); ?>
+                            ₹<?php if (isset($vehicle->vec_price)) echo htmlspecialchars($vehicle->vec_price, ENT_QUOTES, 'UTF-8'); ?>
                         </td>
                         <td>
                             <?php if (isset($vehicle->vec_mfd_date)) echo htmlspecialchars($vehicle->vec_mfd_date, ENT_QUOTES, 'UTF-8'); ?>
