@@ -1,90 +1,165 @@
+/* -------------------------------------------------------------------------- 
+    Base
+  -------------------------------------------------------------------------- */
+
+html {
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
 body {
-    font-family: Arial;
-    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
-.logo {
-    font-size: 100px;
-    font-weight: bolder;
-    letter-spacing: -6px;
-    color: #222;
-    margin: 20px 30px;
+
+.uk-h1, 
+.uk-h2, 
+.uk-h3, 
+.uk-h4, 
+.uk-h5, 
+.uk-h6, 
+.uk-heading-2xlarge, 
+.uk-heading-large, 
+.uk-heading-medium, 
+.uk-heading-small, 
+.uk-heading-xlarge, 
+h1, h2, h3, h4, h5, h6 {
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
 }
-.logo .number {
-    color: #222;
-    opacity: 0.1;
+
+input[type="date"] {
+
+    display: block;
+    max-width: 90%;
+    width: 90%;
+    height: 40px;
+    color: #666;
+    padding: 0 10px;
+    min-width: 100px;
+    border: 1px solid #e5e5e5;
+    transition: .2s ease-in-out;
+    transition-property: color,background-color,border;
 }
-.navigation {
-    margin-left: 33px;
-}
-.navigation a {
-    display: inline-block;
+
+.uk-button.rounded {
+
+    display: inline-flex;
+    gap: 3px;
+    align-items: center;
+    border-radius: 2px;
     padding: 10px 15px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.uk-button .uk-icon .svg {
+
+    height: 16px;
+    width: 16px;
+}
+
+
+/* -------------------------------------------------------------------------- 
+    Header
+  -------------------------------------------------------------------------- */
+
+.mast-header {
+
+    margin: 30px 0 60px 0;
+}
+
+.mast-header .logo {
+
+    font-size: 22px;
+    font-weight: bolder;
+    letter-spacing: 0;
+    color: #222;
+}
+
+.mast-header .logo-link {
+
+    display: block;
+    text-decoration: none;
+}
+
+.mast-header .logo-link:hover {
+
+    text-decoration: none;
+}
+
+.mast-header .logo .site-description {
+
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+.mast-header .navigation {
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mast-header .navigation a {
+
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
-    border: 2px solid #222;
-    background: #222;
-    color: #fff;
+    color: #444444;
 }
+
 .navigation a:hover {
-    color: #222;
-    background: transparent;
+
+    color: #0f7ae5;
 }
-.container {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 33px;
+
+.colophone {
+
+    margin-top: 40px;
+    padding: 30px 0;
+    text-align: left;
+    font-size: 14px;
+    border-top: 1px solid #DDD;
 }
-.container a {
-    color: #222;
+
+
+/* -------------------------------------------------------------------------- 
+    Vehicles index
+  -------------------------------------------------------------------------- */
+
+#vehicle-info {
+
+    padding: 15px;
+    margin: 60px 0;
+    border-radius: 5px;
+    border: 2px solid #444444;
 }
-.container table {
-    font-size: 11px;
-    margin-top: 20px;
+
+.align-item-center {
+
+    align-items: center;
 }
-.container table thead td {
-    background-color: #f5f5f5;
-    padding: 4px 10px;
+
+.uk-vehicle-listing tbody .actions .uk-button-danger {
+
+    margin-left: 10px;
 }
-.container table tbody td {
-    padding: 4px 10px;
-}
-.container .box {
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-    margin-top: 30px;
-}
-.container input {
-    background-color: #f5f5f5;
-    border: 0;
-    padding: 5px 10px;
-}
-.container input[type="submit"] {
-    background-color: #ccc;
-    cursor: pointer;
-}
-.container input[type="submit"]:hover {
-    background-color: #222;
-    color: #fff;
-}
-.container button {
-    background-color: #ccc;
-    border: 0;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-.container button:hover {
-    background-color: #222;
-    color: #fff;
-}
-.footer {
-    padding: 20px;
-    margin: 33px;
-    text-align: right;
-    font-size: 11px;
-    opacity: 0.5;
-}
-.footer a {
-    color: #454545;
+
+#edit-vehicle {
+
+    display: block;
+    border: 2px solid #444444;
+    padding: 30px;
+    border-radius: 30px;
+    margin-bottom: 60px;
 }
