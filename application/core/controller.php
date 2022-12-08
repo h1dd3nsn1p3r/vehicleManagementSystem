@@ -44,7 +44,9 @@ class Controller
     public function loadModel()
     {
         require APP . 'model/model.php';
+        require APP . 'model/branch.php';
         // create new "model" (and pass the database connection)
         $this->model = new Model($this->db);
+        $this->branchModel = new BranchModel($this->db);
     }
 }

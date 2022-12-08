@@ -14,7 +14,7 @@
                     </span>
                 </div>
                 <div class="block">
-                    <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #add-new-vehicle-model">Add vehicle</button>
+                    <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #add-new-vehicle-model">Add new vehicle</button>
                 </div>
             </div>
         </section>

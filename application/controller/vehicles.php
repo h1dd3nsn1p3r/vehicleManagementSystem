@@ -17,7 +17,7 @@ class Vehicles extends Controller
         $vehicles = $this->model->getAllVehicles();
         $amount_of_vehicles = $this->model->getAmountOfVehicles();
 
-       // load views. within the views we can echo out $songs and $amount_of_vehicles easily
+       // load views. within the views we can echo out $vehicle and $amount_of_vehicles easily
         require APP . 'view/_templates/header.php';
         require APP . 'view/vehicles/index.php';
         require APP . 'view/_templates/footer.php';
@@ -26,9 +26,9 @@ class Vehicles extends Controller
     /**
      * ACTION: addVehicles
      * This method handles what happens when you move to http://yourproject/vehicles/addVehicles
-     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "add a song" form on songs/index
+     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "add a vehicle" form on vehicle/index
      * directs the user after the form submit. This method handles all the POST data from the form and then redirects
-     * the user back to songs/index via the last line: header(...)
+     * the user back to vehicle/index via the last line: header(...)
      * This is an example of how to handle a POST request.
      */
     public function addVehicles()
@@ -48,39 +48,39 @@ class Vehicles extends Controller
             );
         }
 
-        // where to go after song has been added
+        // where to go after vehicle has been added
         header('location: ' . URL . 'vehicles/index');
     }
 
     /**
      * ACTION: deleteVehicle
      * This method handles what happens when you move to http://yourproject/vehicles/deleteVehicle
-     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "delete a song" button on songs/index
+     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "delete a vehicle" button on vehicles/index
      * directs the user after the click. This method handles all the data from the GET request (in the URL!) and then
-     * redirects the user back to songs/index via the last line: header(...)
+     * redirects the user back to vehicle/index via the last line: header(...)
      * This is an example of how to handle a GET request.
-     * @param int $song_id Id of the to-delete song
+     * @param int $vec_id
      */
     public function deleteVehicle($vec_id)
     {
-        // if we have an id of a song that should be deleted
+        // if we have an id of a vehicle that should be deleted
         if (isset($vec_id)) {
-            // do deleteSong() in model/model.php
+            // do deleteVehicle() in model/model.php
             $this->model->deleteVehicle($vec_id);
         }
 
-        // where to go after song has been deleted
+        // where to go after vehicle has been deleted
         header('location: ' . URL . 'vehicles/index');
     }
 
     /**
     * ACTION: editVehicle
     * This method handles what happens when you move to http://yourproject/vechicles/editVehicle
-    * @param int $vec_id Id of the to-edit song
+    * @param int $vec_id
     */
     public function editVehicle($vec_id)
     {
-        // if we have an id of a song that should be edited
+        // if we have an id of a vehicle that should be edited
         if (isset($vec_id)) {
             // do getVehicle() in model/model.php
             $vehicle = $this->model->getVehicle($vec_id);
@@ -88,12 +88,12 @@ class Vehicles extends Controller
             // in a real application we would also check if this db entry exists and therefore show the result or
             // redirect the user to an error page or similar
 
-            // load views. within the views we can echo out $song easily
+            // load views. within the views we can echo out $vehicle easily
             require APP . 'view/_templates/header.php';
             require APP . 'view/vehicles/edit.php';
             require APP . 'view/_templates/footer.php';
         } else {
-            // redirect user to vehicles index page (as we don't have a song_id)
+            // redirect user to vehicles index page (as we don't have a vec_id)
             header('location: ' . URL . 'vehicles/index');
         }
     }
@@ -123,7 +123,7 @@ class Vehicles extends Controller
             );
         }
 
-        // where to go after song has been added
+        // where to go after vehicle has been added
         header('location: ' . URL . 'vehicles/index');
     }
 

@@ -25,7 +25,7 @@
                 <nav class="navigation">
                     <a href="<?php echo URL; ?>">Home</a>
                     <a href="<?php echo URL; ?>home/exampleone">Customers</a>
-                    <a href="<?php echo URL; ?>home/exampletwo">Branch</a>
+                    <a href="<?php echo URL; ?>branches">Branch</a>
                     <a href="<?php echo URL; ?>vehicles">Vehicles</a>
                 </nav><!-- // navigation -->
             </div>

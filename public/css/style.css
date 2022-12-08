@@ -137,7 +137,8 @@ input[type="date"] {
     Vehicles index
   -------------------------------------------------------------------------- */
 
-#vehicle-info {
+#vehicle-info,
+#branch-info {
 
     padding: 15px;
     margin: 60px 0;
@@ -150,6 +151,7 @@ input[type="date"] {
     align-items: center;
 }
 
+.uk-branch-listing tbody .actions .uk-button-danger,
 .uk-vehicle-listing tbody .actions .uk-button-danger {
 
     margin-left: 10px;
@@ -162,4 +164,23 @@ input[type="date"] {
     padding: 30px;
     border-radius: 30px;
     margin-bottom: 60px;
+}
+
+
+/* -------------------------------------------------------------------------- 
+    Error 404
+  -------------------------------------------------------------------------- */
+
+.error-page {
+
+    display: block;
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.error-page .heading {
+
+    font-weight: normal;
+    font-size: 42px;
 }
