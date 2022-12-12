@@ -5,9 +5,6 @@
             <h1 class="uk-h1 login-page-heading">
                 Login.
             </h1>
-            <p>
-                Please use username as <em>anujsubedi</em> & password as <em>password</em> to demonstrate the successful login.
-            </p>
             <?php
 
             /*
@@ -46,6 +43,10 @@
                             </div>
                     </fieldset>
                 </form>
+
+                <p>
+                    <strong>Note:</strong> Please use username as <em>anujsubedi</em> & password as <em>password</em> to demonstrate the successful login.
+                </p>
             </div>
         </div><!-- // login-page -->
     </div><!-- // uk-container -->

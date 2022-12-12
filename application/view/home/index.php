@@ -5,7 +5,7 @@
 <div class="uk-container">
     <main class="main">
         <section id="logged-screen">
-           <h5><span id="greetings"></span> <strong><?php echo AuthHelper::getLoggedInUsername(); ?></strong>,</h5>
+           <h5><span id="greetings"></span> <?php echo AuthHelper::getLoggedInUsername(); ?>,</h5>
            <p>Welcome back to Toyota vehicle management system. You are now logged-in to the system. </p>
         </section>
     </main>

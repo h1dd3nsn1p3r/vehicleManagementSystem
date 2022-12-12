@@ -218,3 +218,18 @@ input[type="date"] {
     border: 1px solid #EEEEEE;
     border-radius: 10px;
 }
+
+
+#logged-screen > h5 {
+
+    display: inline-block;
+    font-weight: normal;
+    margin: 0;
+    padding: 10px 20px;
+    color: white;
+    background-color: #0f7ae5;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 5px; 
+}
