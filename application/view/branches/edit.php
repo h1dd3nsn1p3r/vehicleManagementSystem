@@ -1,3 +1,7 @@
+<?php 
+
+    AuthHelper::handleAccessControl(); // Handle direct access.
+?>
 <div class="uk-container">
     <!-- update branch form -->
     <section id="edit-branch">

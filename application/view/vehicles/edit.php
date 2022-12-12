@@ -1,3 +1,7 @@
+<?php 
+
+    AuthHelper::handleAccessControl(); // Handle direct access.
+?>
 <div class="uk-container">
     <!-- update vehicle form -->
     <section id="edit-vehicle">

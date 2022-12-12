@@ -1,3 +1,7 @@
+<?php 
+
+    AuthHelper::handleAccessControl(); // Handle direct access.
+?>
 <div class="uk-container">
     <!-- Add vechile section -->
     <main class="main" id="main">

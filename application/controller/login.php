@@ -10,11 +10,11 @@ class Login extends Controller
 
     /**
     *
-    * Public variable to hold the errors array.
+    * Public variable to hold the message.
     * @var array
     */
 
-    public $errors;
+    public $message;
 
 
     /**
@@ -59,10 +59,7 @@ class Login extends Controller
         // Check if username & password is valid.
         if ($auth) {
 
-            // Check if sessions has been started.
-            if (session_status() == PHP_SESSION_NONE) {
-                session_start();
-            }
+            AuthHelper::startSession(); // Start the session.
            
             $_SESSION["username"] = $_POST["username"];
            
@@ -72,11 +69,11 @@ class Login extends Controller
         } else {
 
             // Add error to array.
-            $this->errors = "Invalid username or password.";
+            $this->message = "Invalid username or password!!";
 
-            Helper::startSession(); // Start the session.
+            AuthHelper::startSession(); // Start the session.
 
-            $_SESSION["errors"] = $this->errors;
+            $_SESSION["message"] = $this->message;
 
             // Login failed: Redirect to login page. 
             //header('location: ' . URL . 'login/unauthorized');
@@ -90,57 +87,19 @@ class Login extends Controller
      * Destroy the session and redirect to login page.
      */
 
-    public function doLogout() {
+    public function logout() {
 
-        Helper::startSession(); // Start the session.
+        AuthHelper::startSession(); // Start the session.
 
         // Unset all of the session variables.
         $_SESSION = array();
 
-        // Destroy the session.
-        session_destroy();
+        // Add error to array.
+        $this->message = "You have been logged out.";
+        
+        $_SESSION["message"] = $this->message;
 
         // Redirect to login page.
         header('location: ' . URL . 'login/index');
-    }
-
-    /**
-    * Check if the user is logged in.
-    * @return boolean
-    */
-
-    public function isUserLoggedIn() {
-
-        Helper::startSession(); // Start the session.
-
-        return isset($_SESSION["username"]) ? true : false; 
-    }
-
-    /**
-    * Get the name of the current logged user.
-    * @return string
-    */
-
-    public function getLoggedInUsername() {
-
-        Helper::startSession(); // Start the session.
-
-        // When false is returned, the user is not logged in.
-        return isset($_SESSION["username"]) ? $_SESSION["username"] : false;
-    }
-
-    /**
-    * Check if full name of logged in user.
-    * @return boolean
-    */
-
-    public function getUserFullName() {
-
-        Helper::startSession(); // Start the session.
-
-        $name = $this->authModel->getUserFullName(
-
-            $_POST["username"], 
-        );
     }
 }

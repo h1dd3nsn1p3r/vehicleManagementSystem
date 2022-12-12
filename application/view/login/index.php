@@ -16,16 +16,16 @@
             * 
             */
 
-            Helper::startSession(); // Start the session.
+            AuthHelper::startSession(); // Start the session.
 
-            if ( isset($_SESSION['errors']) ) { ?>
+            if ( isset($_SESSION['message']) ) { ?>
 
                 <div class="uk-alert-danger" uk-alert>
                     <a class="uk-alert-close" uk-close></a>
-                    <p><?php echo $_SESSION['errors']; ?></p>
+                    <p><?php echo $_SESSION['message']; ?></p>
                 </div>
 
-            <?php } unset($_SESSION['errors']); ?>
+            <?php } unset($_SESSION['message']); ?>
 
             <div id="login-form-block">
                 <form id="login-form" action="<?php echo URL; ?>login/checkAuth" method="POST">

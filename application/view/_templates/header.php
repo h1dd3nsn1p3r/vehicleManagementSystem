@@ -1,3 +1,8 @@
+ <?php
+        
+    $login_url = URL . 'login/index';
+    $logout_url = URL . 'login/logout';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,12 +20,6 @@
 </head>
 
 <body>
-
-    <?php
-
-       // isUserLoggedIn()
-        
-    ?>
     <header class="mast-header">
         <div class="uk-container">
             <div class="uk-flex align-item-center uk-flex-between">
@@ -33,7 +32,13 @@
                     <a href="<?php echo URL; ?>customers">Customers</a>
                     <a href="<?php echo URL; ?>branches">Branch</a>
                     <a href="<?php echo URL; ?>vehicles">Vehicles</a>
-                    <a class="uk-button uk-button-primary" href="<?php echo URL; ?>login/index">Login</a>
+                    <a 
+                        class="uk-button uk-button-primary" 
+                        href="<?php AuthHelper::isLoggedIn() == true ? print $logout_url : print $login_url; ?>">
+                        <?php 
+                            AuthHelper::isLoggedIn() == true ? print 'Logout' : print 'Login';
+                        ?>
+                    </a>
                 </nav><!-- // navigation -->
             </div>
         </div><!-- /container -->
