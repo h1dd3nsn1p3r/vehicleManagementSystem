@@ -1,6 +1,14 @@
 <?php 
 
-    $login_url = URL . 'login/index'; // Login page url. 
+    $login_url = URL . 'login/index'; // Login page url.
+
+    /**
+    *
+    * Don't let user to see this page if user is logged in.
+    */
+    
+    AuthHelper::isLoggedIn() ? header('location: ' . URL . 'home/index') : '';
+
 ?>
 <main class="main">
     <div class="uk-container">

@@ -1,3 +1,14 @@
+<?php 
+
+/**
+*
+* Don't let user to see this page if user is logged in.
+*/
+
+AuthHelper::isLoggedIn() ? header('location: ' . URL . 'home/index') : '';
+
+?>
+
 <main class="main">
     <div class="uk-container">
 
@@ -17,7 +28,7 @@
 
             if ( isset($_SESSION['message']) ) { ?>
 
-                <div class="uk-alert-danger" uk-alert>
+                <div class="uk-alert-warning" uk-alert>
                     <a class="uk-alert-close" uk-close></a>
                     <p><?php echo $_SESSION['message']; ?></p>
                 </div>
