@@ -45,8 +45,15 @@ class Controller
     {
         require APP . 'model/model.php';
         require APP . 'model/branch.php';
-        // create new "model" (and pass the database connection)
+        require APP . 'model/customer.php';
+        require APP . 'model/auth.php';
+
+        // Create models (and pass the database connection)
+        
         $this->model = new Model($this->db);
         $this->branchModel = new BranchModel($this->db);
+        $this->customerModel = new CustomerModel($this->db);
+        $this->authModel = new AuthModel($this->db);
     }
+
 }

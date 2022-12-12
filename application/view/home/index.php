@@ -1,4 +1,12 @@
-<div class="container">
-    <h2>You are in the View: application/view/home/index.php (everything in the box comes from this file)</h2>
-    <p>In a real application this could be the homepage.</p>
-</div>
+<div class="uk-container">
+    <main class="main">
+        <section id="logged-screen">
+            Hello 
+            <?php 
+                session_start();
+                var_dump($_SESSION);
+                //echo $this->login->getLoggedUsername(); 
+            ?>
+        </section>
+    </main>
+</div><!-- // uk-container -->

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Toyota | Vehicle management system.</title>
+    <title>Toyota | Vehicle Management System.</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,12 @@
 </head>
 
 <body>
+
+    <?php
+
+       // isUserLoggedIn()
+        
+    ?>
     <header class="mast-header">
         <div class="uk-container">
             <div class="uk-flex align-item-center uk-flex-between">
@@ -24,9 +30,10 @@
                 </div><!-- // logo -->
                 <nav class="navigation">
                     <a href="<?php echo URL; ?>">Home</a>
-                    <a href="<?php echo URL; ?>home/exampleone">Customers</a>
+                    <a href="<?php echo URL; ?>customers">Customers</a>
                     <a href="<?php echo URL; ?>branches">Branch</a>
                     <a href="<?php echo URL; ?>vehicles">Vehicles</a>
+                    <a class="uk-button uk-button-primary" href="<?php echo URL; ?>login/index">Login</a>
                 </nav><!-- // navigation -->
             </div>
         </div><!-- /container -->
