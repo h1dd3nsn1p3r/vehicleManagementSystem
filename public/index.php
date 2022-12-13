@@ -1,11 +1,11 @@
 <?php
 
 /**
- * MINI - an extremely simple naked PHP application
+ * Toyota - vehicle management system.
  *
- * @package mini
- * @author Panique
- * @link https://github.com/panique/mini/
+ * @package Toyota
+ * @author Anuj Subedi
+ * @link https://github.com/h1dd3nsn1p3r/miniphp
  * @license http://opensource.org/licenses/MIT MIT License
  */
 
