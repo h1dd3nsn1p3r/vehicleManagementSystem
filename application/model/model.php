@@ -24,8 +24,13 @@ class Model
                 vec_name, 
                 vec_price, 
                 vec_model, 
-                vec_mfd_date 
-                FROM vechile_details";
+                vec_mfd_date,
+                colors.color_name as color_name,
+                branches.branch_name as branch_name 
+                FROM vechile_details
+                LEFT JOIN colors ON vechile_details.vec_color_id = colors.color_id
+                LEFT JOIN branches ON vechile_details.vec_branch_id = branches.branch_id
+                ";
                 
         $query = $this->db->prepare($sql);
         $query->execute();

@@ -85,6 +85,7 @@
                         <td>Email</td>
                         <td>Address</td>
                         <td>Vehicle</td>
+                        <td>Branch</td>
                         <td>Purchased Date</td>
                         <td>Action</td>
                     </tr>
@@ -108,7 +109,10 @@
                             <?php if (isset($customer->cust_address)) echo htmlspecialchars($customer->cust_address, ENT_QUOTES, 'UTF-8'); ?>
                         </td>
                         <td>
-                            <?php if (isset($customer->vechile_id)) echo htmlspecialchars($customer->vechile_id, ENT_QUOTES, 'UTF-8'); ?>
+                            <?php if (isset($customer->vec_name)) echo htmlspecialchars($customer->vec_name, ENT_QUOTES, 'UTF-8'); ?>
+                        </td>
+                        <td>
+                            <?php if (isset($customer->branch_name)) echo htmlspecialchars($customer->branch_name, ENT_QUOTES, 'UTF-8'); ?>
                         </td>
                         <td>
                             <?php if (isset($customer->purchase_date)) echo htmlspecialchars($customer->purchase_date, ENT_QUOTES, 'UTF-8'); ?>

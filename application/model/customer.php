@@ -21,14 +21,17 @@ class CustomerModel
     {
         $sql = "SELECT 
                 cust_id, 
-                cust_name, 
+                cust_name,
                 cust_phone, 
                 cust_email,
                 cust_address,
-                vechile_id,
+                vechile_details.vec_name as vec_name,
                 purchase_date,
-                branch_id
-                FROM customer_details";
+                branches.branch_name as branch_name
+                FROM customer_details 
+                LEFT JOIN vechile_details ON customer_details.vechile_id = vechile_details.vec_id
+                LEFT JOIN branches ON customer_details.branch_id = branches.branch_id
+                ORDER BY cust_id DESC";
                 
         $query = $this->db->prepare($sql);
         $query->execute();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 12, 2022 at 03:16 PM
+-- Generation Time: Dec 14, 2022 at 11:44 AM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -123,56 +123,6 @@ CREATE TABLE IF NOT EXISTS `employee_details` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `song`
---
-
-DROP TABLE IF EXISTS `song`;
-CREATE TABLE IF NOT EXISTS `song` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `artist` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `track` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `link` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb3;
-
---
--- Dumping data for table `song`
---
-
-INSERT INTO `song` (`id`, `artist`, `track`, `link`) VALUES
-(2, 'Jessy Lanza', 'Kathy Lee', 'http://vimeo.com/73455369'),
-(3, 'The Orwells', 'In my Bed (live)', 'http://www.youtube.com/watch?v=8tA_2qCGnmE'),
-(4, 'L\'Orange & Stik Figa', 'Smoke Rings', 'https://www.youtube.com/watch?v=Q5teohMyGEY'),
-(5, 'Labyrinth Ear', 'Navy Light', 'http://www.youtube.com/watch?v=a9qKkG7NDu0'),
-(6, 'Bon Hiver', 'Wolves (Kill them with Colour Remix)', 'http://www.youtube.com/watch?v=5GXAL5mzmyw'),
-(7, 'Detachments', 'Circles (Martyn Remix)', 'http://www.youtube.com/watch?v=UzS7Gvn7jJ0'),
-(8, 'Dillon & Dirk von Loetzow', 'Tip Tapping (Live at ZDF Aufnahmezustand)', 'https://www.youtube.com/watch?v=hbrOLsgu000'),
-(9, 'Dillon', 'Contact Us (Live at ZDF Aufnahmezustand)', 'https://www.youtube.com/watch?v=E6WqTL2Up3Y'),
-(10, 'Tricky', 'Hey Love (Promo Edit)', 'http://www.youtube.com/watch?v=OIsCGdW49OQ'),
-(11, 'Compuphonic', 'Sunset feat. Marques Toliver (DJ T. Remix)', 'http://www.youtube.com/watch?v=Ue5ZWSK9r00'),
-(12, 'Ludovico Einaudi', 'Divenire (live @ Royal Albert Hall London)', 'http://www.youtube.com/watch?v=X1DRDcGlSsE'),
-(13, 'Maxxi Soundsystem', 'Regrets we have no use for (Radio1 Rip)', 'https://soundcloud.com/maxxisoundsystem/maxxi-soundsystem-ft-name-one'),
-(14, 'Beirut', 'Nantes (Fredo & Thang Remix)', 'https://www.youtube.com/watch?v=ojV3oMAgGgU'),
-(15, 'Buku', 'All Deez', 'http://www.youtube.com/watch?v=R0bN9JRIqig'),
-(16, 'Pilocka Krach', 'Wild Pete', 'http://www.youtube.com/watch?v=4wChP_BEJ4s'),
-(17, 'Mount Kimbie', 'Here to stray (live at Pitchfork Music Festival Paris)', 'http://www.youtube.com/watch?v=jecgI-zEgIg'),
-(18, 'Kool Savas', 'King of Rap (2012) / Ein Wunder', 'http://www.youtube.com/watch?v=mTqc6UTG1eY&hd=1'),
-(19, 'Chaim feat. Meital De Razon', 'Love Rehab (Original Mix)', 'http://www.youtube.com/watch?v=MJT1BbNFiGs'),
-(20, 'Emika', 'Searching', 'http://www.youtube.com/watch?v=oscuSiHfbwo'),
-(21, 'Emika', 'Sing to me', 'http://www.youtube.com/watch?v=k9sDBZm8pgk'),
-(22, 'George Fitzgerald', 'Thinking of You', 'http://www.youtube.com/watch?v=-14B8l49iKA'),
-(23, 'Disclosure', 'You & Me (Flume Edit)', 'http://www.youtube.com/watch?v=OUkkaqSNduU'),
-(24, 'Crystal Castles', 'Doe Deer', 'http://www.youtube.com/watch?v=zop0sWrKJnQ'),
-(25, 'Tok Tok vs. Soffy O.', 'Missy Queens Gonna Die', 'http://www.youtube.com/watch?v=EN0Tnw5zy6w'),
-(26, 'Fink', 'Maker (Synapson Remix)', 'http://www.youtube.com/watch?v=Dyd-cUkj4Nk'),
-(27, 'Flight Facilities (ft. Christine Hoberg)', 'Clair De Lune', 'http://www.youtube.com/watch?v=Jcu1AHaTchM'),
-(28, 'Karmon', 'Turning Point (Original Mix)', 'https://www.youtube.com/watch?v=-tB-zyLSPEo'),
-(29, 'Shuttle Life', 'The Birds', 'http://www.youtube.com/watch?v=-I3m3cWDEtM');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -207,7 +157,9 @@ CREATE TABLE IF NOT EXISTS `vechile_details` (
   `vec_mfd_date` varchar(250) NOT NULL,
   `vec_color_id` int NOT NULL,
   `vec_branch_id` int NOT NULL,
-  PRIMARY KEY (`vec_id`)
+  PRIMARY KEY (`vec_id`),
+  KEY `vec_color_id` (`vec_color_id`),
+  KEY `vec_branch_id` (`vec_branch_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -217,8 +169,8 @@ CREATE TABLE IF NOT EXISTS `vechile_details` (
 INSERT INTO `vechile_details` (`vec_id`, `vec_name`, `vec_price`, `vec_model`, `vec_mfd_date`, `vec_color_id`, `vec_branch_id`) VALUES
 (3, 'Fortuner', 67000.00, 'FOST6', '2018-01-16', 2, 2),
 (4, 'Avalon', 13000.00, 'EVY67', '2017-09-12', 1, 1),
-(5, 'Corolla (56000 BHP Vox powered engine)', 57899.00, 'TKIS07', '2022-07-05', 1, 1),
-(7, 'Foxo (45000 BHP long range electric car with max speed 300KMPH)', 45000.00, 'HTS89', '2022-03-14', 1, 1),
+(5, 'Corolla', 57899.00, 'TKIS07', '2022-07-05', 1, 1),
+(7, 'Foxo', 45000.00, 'HTS89', '2022-03-14', 1, 1),
 (8, 'Yaris', 5600.00, 'RT99', '2022-01-01', 1, 1),
 (10, 'Lester 1956 Sports Edition', 560000.00, 'SPO7', '2022-12-12', 1, 1),
 (14, 'Sienna', 44000.00, 'SIN9', '1994-01-02', 3, 2);
@@ -233,6 +185,13 @@ INSERT INTO `vechile_details` (`vec_id`, `vec_name`, `vec_price`, `vec_model`, `
 ALTER TABLE `customer_details`
   ADD CONSTRAINT `branch_id` FOREIGN KEY (`branch_id`) REFERENCES `branches` (`branch_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `vehicle_id` FOREIGN KEY (`vechile_id`) REFERENCES `vechile_details` (`vec_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `vechile_details`
+--
+ALTER TABLE `vechile_details`
+  ADD CONSTRAINT `vec_branch_id` FOREIGN KEY (`vec_branch_id`) REFERENCES `branches` (`branch_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `vec_color_id` FOREIGN KEY (`vec_color_id`) REFERENCES `colors` (`color_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

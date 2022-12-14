@@ -77,7 +77,9 @@
                         <td>Name</td>
                         <td>Model</td>
                         <td>Price</td>
+                        <td>Color</td>
                         <td>MFD Date</td>
+                        <td>Branch</td>
                         <td>Action</td>
                     </tr>
                 </thead>
@@ -97,7 +99,13 @@
                             ₹<?php if (isset($vehicle->vec_price)) echo htmlspecialchars($vehicle->vec_price, ENT_QUOTES, 'UTF-8'); ?>
                         </td>
                         <td>
+                            <?php if (isset($vehicle->color_name)) echo htmlspecialchars($vehicle->color_name, ENT_QUOTES, 'UTF-8'); ?>
+                        </td>
+                        <td>
                             <?php if (isset($vehicle->vec_mfd_date)) echo htmlspecialchars($vehicle->vec_mfd_date, ENT_QUOTES, 'UTF-8'); ?>
+                        </td>
+                        <td>
+                            <?php if (isset($vehicle->branch_name)) echo htmlspecialchars($vehicle->branch_name, ENT_QUOTES, 'UTF-8'); ?>
                         </td>
                         <td class="actions">
                             <a href="<?php echo URL . 'vehicles/editVehicle/' . htmlspecialchars($vehicle->vec_id, ENT_QUOTES, 'UTF-8'); ?>" class="uk-button uk-button-primary rounded">
