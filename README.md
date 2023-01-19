@@ -1,6 +1,6 @@
-# MINIPHP
+# vehicleManagementSystem
 
-Simple database assignment done using lightweight PHP framework called Mini. 
+Simple vehicle management system project done using lightweight PHP framework called Mini. 
 
 ## Requirements
 
@@ -11,10 +11,10 @@ Simple database assignment done using lightweight PHP framework called Mini.
 ## Quick-Start
 
 - You can simply downlaod this project in `xampp/htdocs` folder. 
-- Rename the folder name from `miniphp-main` to `miniphp` or any desired name (Optional)
+- Rename the folder name from `vehicleManagementSystem-main` to `vms` or any desired name (Optional)
 - Then start the Apache and MySQL server. 
-- Import the database `toyota.sql` which is located at `miniphp/_install` folder.
-- Then you can access the project by typing `localhost/miniphp` in your browser.
+- Import the database `toyota.sql` which is located at `vehicleManagementSystem/_install` folder.
+- Then you can access the project by typing `localhost/vms` in your browser.
 
 #### The structure in general
 
