@@ -1,6 +1,6 @@
 # vehicleManagementSystem
 
-Simple vehicle management system project done using lightweight PHP framework called Mini. 
+Simple vehicle management system project done using lightweight PHP framework called MINI PHP. 
 
 ## Requirements
 
